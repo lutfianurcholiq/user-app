@@ -40,9 +40,9 @@
                 </li>
                 <li class="nav-header">Pengaturan</li>
                 <li class="nav-item">
-                    <a href="pages/calendar.html" class="nav-link">
-                    <i class="nav-icon fas fa-users-cog"></i>
-                    <p>User Management</p>
+                    <a href="/setting" class="nav-link {{ Request::is('setting') ? 'active' : " " }}">
+                        <i class="nav-icon fas fa-users-cog"></i>
+                        <p>User Management</p>
                     </a>
                 </li>
             </ul>

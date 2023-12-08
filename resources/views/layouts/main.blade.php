@@ -41,25 +41,33 @@
     <script src="{{ asset('assets-template/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>
-    $.widget.bridge('uibutton', $.ui.button)
-    </script>
+        $.widget.bridge('uibutton', $.ui.button)
+        </script>
     <!-- Bootstrap 4 -->
     <script src="{{ asset('assets-template/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <!-- ChartJS -->
-    <script src="{{ asset('assets-template/plugins/chart.js/Chart.min.js') }}"></script>
+    {{-- <script src="{{ asset('assets-template/plugins/chart.js/Chart.min.js') }}"></script> --}}
     <!-- Sparkline -->
-    <script src="{{ asset('assets-template/plugins/sparklines/sparkline.js') }}"></script>
+    {{-- <script src="{{ asset('assets-template/plugins/sparklines/sparkline.js') }}"></script> --}}
     <!-- jQuery Knob Chart -->
-    <script src="{{ asset('assets-template/plugins/jquery-knob/jquery.knob.min.js') }}"></script>
+    {{-- <script src="{{ asset('assets-template/plugins/jquery-knob/jquery.knob.min.js') }}"></script> --}}
     <!-- Tempusdominus Bootstrap 4 -->
     {{-- <script src="{{ asset('assets-template/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script> --}}
     <!-- overlayScrollbars -->
-    <script src="{{ asset('assets-template/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
+    {{-- <script src="{{ asset('assets-template/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script> --}}
     <!-- AdminLTE App -->
     <script src="{{ asset('assets-template/dist/js/adminlte.js') }}"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="{{ asset('assets-template/dist/js/demo.js') }}"></script>
+    {{-- <script src="{{ asset('assets-template/dist/js/demo.js') }}"></script> --}}
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     {{-- <script src="{{ asset('assets-template/dist/js/pages/dashboard.js') }}"></script> --}}
+    {{-- Datatables --}}
+    <script src="{{ asset('assets-template/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('assets-template/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('assets-template/plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ asset('assets-template/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('assets-template/plugins/datatables-buttons/js/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ asset('assets-template/plugins/datatables-buttons/js/buttons.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('assets/js/main.js') }}"></script>
 </body>
 </html>

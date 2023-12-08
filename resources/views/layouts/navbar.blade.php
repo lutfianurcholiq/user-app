@@ -12,7 +12,7 @@
     <!-- Notifications Dropdown Menu -->
         <li class="nav-item dropdown mr-3">
             <a class="nav-link" data-toggle="dropdown" href="#">
-                <i class="fas fa-user mr-1"></i>Hai, {{ Auth::user()->name }}
+                <i class="fas fa-user mr-1"></i>Hai, <b>{{ Auth::user()->name }}</b>
             </a>
             <div class="dropdown-menu dropdown-menu-md dropdown-menu-right">
                 <form class="dropdown-item" action="/logout" method="post">
