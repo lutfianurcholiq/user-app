@@ -7,37 +7,53 @@
 
 <body class="hold-transition login-page">
     <div class="login-box">
-        <!-- /.login-logo -->
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
                 <img class="mb-1 mt-2" src="{{ asset('assets/images/logo/logo-brand-1.png') }}" alt="Logo Use-Man" width="200px">
             </div>
             <div class="card-body">
                 {{-- <p class="login-box-msg">Sign in to start your session</p> --}}
+                @if (session()->has('berhasil'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>{{ session('berhasil') }}</strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                @endif
 
-                <form action="../../index3.html" method="post">
+                <form action="/login" method="post">
+                    @csrf
                     <div class="input-group mb-3">
-                        <input type="email" class="form-control" placeholder="Email">
+                        <input type="email" id="email" name="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" placeholder="Email">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
                             </div>
                         </div>
+                        @error('email')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="Password">
+                        <input type="password" id="password" name="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
                             </div>
                         </div>
+                        @error('password')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                     <div class="row">
-                    <!-- /.col -->
-                    <div class="col">
-                        <button type="submit" class="btn btn-primary btn-block">Masuk</button>
-                    </div>
-                    <!-- /.col -->
+                        <div class="col">
+                            <button type="submit" class="btn btn-primary btn-block">Masuk</button>
+                        </div>
                     </div>
                 </form>
                 <hr>
@@ -45,11 +61,8 @@
                     Belum Punya Akun ? Daftar <a href="/register" class="text-center">Disini</a>
                 </p>
             </div>
-            <!-- /.card-body -->
         </div>
-    <!-- /.card -->
     </div>
-    <!-- /.login-box -->
 
     <!-- jQuery -->
     <script src="{{ asset('assets-template/plugins/jquery/jquery.min.js') }}"></script>

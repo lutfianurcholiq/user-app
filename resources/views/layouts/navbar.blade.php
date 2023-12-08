@@ -12,12 +12,13 @@
     <!-- Notifications Dropdown Menu -->
         <li class="nav-item dropdown mr-3">
             <a class="nav-link" data-toggle="dropdown" href="#">
-                <i class="fas fa-user mr-1"></i> Hai, Alexander
+                <i class="fas fa-user mr-1"></i>Hai, {{ Auth::user()->name }}
             </a>
             <div class="dropdown-menu dropdown-menu-md dropdown-menu-right">
-                <a href="#" class="dropdown-item">
-                    <i class="fas fa-sign-out-alt"></i> Keluar
-                </a>
+                <form class="dropdown-item" action="/logout" method="post">
+                    @csrf
+                    <button type="submit" class="btn btn-white"><i class="fas fa-sign-out-alt"></i> Keluar</button>
+                </form>
                 {{-- <div class="dropdown-divider"></div>
                 <a href="#" class="dropdown-item">
                     <i class="fas fa-file mr-2"></i> 3 new reports

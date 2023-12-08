@@ -6,25 +6,34 @@ use App\Models\User;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
+use App\Http\Controllers\Controller;
 
 class RegistrasiController extends Controller
 {
-    public function index():View 
+    public function index(): View 
     {
         return view('register.register-index');
     }
 
-    public function register(Request $request):RedirectResponse
+    public function store(Request $request): RedirectResponse
     {
-        $validate = $request->validate([
+
+        $request->validate([
             'email' => 'required|max:255|unique:users|email:rfc,dns',
             'name' => 'required|max:255',
-            'password' => 'required|min:7|max:10'
+            'password' => 'required|min:7|max:10',
+            'passwordConfirm' => 'required|same:password|min:7|max:10|required_with:password'
         ]);
 
-        User::create($validate);
+        $password = bcrypt($request->password);
 
-        return redirect('/user')->with('berhasil', 'Registrasi Telah Berhasil');
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => $password,
+        ]);
+
+        return redirect('/login')->with('berhasil', 'Registrasi Telah Berhasil');
 
     }
 }
